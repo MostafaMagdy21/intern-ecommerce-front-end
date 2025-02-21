@@ -1,16 +1,17 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import SubNavbar from "./components/SubNavbar";
-import Footer from "./(Sides)/Footer/Footer";
+import { BrowserRouter } from "react-router-dom";
+import { Routing } from "./Routing";
 
 function App() {
-  return (
-    <>
-      <SubNavbar />
-      <Footer />
-    </>
-  );
+	return (
+		<BrowserRouter>
+			<Routing />
+			{/* <SubNavbar />
+      <Footer /> */}
+		</BrowserRouter>
+	);
 }
 
 export default App;
