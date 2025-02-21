@@ -6,8 +6,31 @@
 body {
   overflow-x: hidden;
 }
-/* footer */
-.BTNfooter{
+
+/*--------- Navbar ---------- */
+#subnav {
+  padding: 3px 12px;
+  background: #232f3e;
+}
+
+.navbar-brand {
+  font-family: Lato , sans-serif;
+  font-weight: 800;
+  font-size: 16.34px;
+  line-height: 19.61px;
+  letter-spacing: 0%;
+}
+
+.nav-item {
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  font-size: 16.41px;
+  line-height: 19.7px;
+  letter-spacing: 0%;
+}
+
+/*------------ footer -------------*/
+.BTNfooter {
   background: #37475a !important;
   width: 100%;
   text-align: center;
@@ -16,14 +39,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  
-
 }
 .btnFooter {
   color: aliceblue;
   flex-grow: 1;
 
- 
   background: #37475a !important;
   border: none;
 
@@ -37,14 +57,13 @@ footer {
   width: 100%;
   min-height: 548px;
   background: #232f3e;
-  li{
+  li {
     list-style: none;
   }
-  .footer-section{
+  .footer-section {
     margin-top: 50px;
-
   }
-  .container{
-    border-bottom: #4C4C4C 1px solid;
+  .container {
+    border-bottom: #4c4c4c 1px solid;
   }
 }
