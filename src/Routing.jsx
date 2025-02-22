@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import AllProducts from './components/Allproducts';
+import AllProducts from './components/sharedComponents/Allproducts';
 
 export const Routing = () => {
 	return (
