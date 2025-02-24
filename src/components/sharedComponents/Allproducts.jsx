@@ -30,7 +30,7 @@ function AllProducts() {
                         <div className="card h-100 d-flex flex-column">
                             <img
                                 src={product.image}
-                                className="card-img-top p-3"
+                                className="card-img-top p-3 "
                                 alt={product.title}
                                 style={{ height: "200px", objectFit: "contain" }}
                             />
