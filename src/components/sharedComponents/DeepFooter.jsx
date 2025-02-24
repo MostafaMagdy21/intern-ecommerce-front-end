@@ -4,7 +4,7 @@ import { DdeepFooter } from "./Dfooter";
 const DeepFooter = () => {
   return (
     <>
-      <div className="container">
+      <div className="container deepFooter">
         <div className="row">
           {DdeepFooter.map((e, i) => {
             return (

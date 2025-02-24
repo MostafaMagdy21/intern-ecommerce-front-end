@@ -67,3 +67,27 @@ footer {
     border-bottom: #4c4c4c 1px solid;
   }
 }
+/* DeepFooter */
+.deepFooter{
+  background: #131A22;
+  width: 1440px;
+height: 266px;
+h3{
+  font-family: Noto Serif Gujarati;
+font-weight: 500;
+font-size: 14.67px;
+line-height: 21.23px;
+letter-spacing: 0%;
+color: #fff;
+
+}
+p{
+  font-family: Noto Serif Gujarati;
+font-weight: 300;
+font-size: 14.67px;
+line-height: 21.23px;
+letter-spacing: 0%;
+color: #999999;
+}
+
+}
