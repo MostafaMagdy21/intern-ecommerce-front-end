@@ -1,4 +1,5 @@
 import { Dcontact, Dhelp, Dknows, DMakeMoney } from "./Dfooter";
+import logo from "../../assets/AmazonLogo.svg";
 
 const Footer = () => {
   return (
@@ -57,7 +58,7 @@ const Footer = () => {
         </div>
         <div className="inputsFooter d-flex justify-content-center align-items-center">
 <div className="img mx-3">
-  <img src="/public/Amazon.svg" alt="logo" />
+  <img src={logo} alt="logo" />
 </div>
 <div className="inputsFooter d-flex align-items-center">
 <div className="d-flex align-items-center border border-secondary px-3 py-2 rounded bg-transparent text-white">

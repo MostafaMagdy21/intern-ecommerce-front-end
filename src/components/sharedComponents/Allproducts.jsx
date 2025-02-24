@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import icon from "../../images/Vector 5.png";
+import icon from "../../assets/Vector 5.png";
 
 function AllProducts() {
     const [products, setProducts] = useState([]);
@@ -30,7 +30,7 @@ function AllProducts() {
                         <div className="card h-100 d-flex flex-column">
                             <img
                                 src={product.image}
-                                className="card-img-top p-3"
+                                className="card-img-top p-3 "
                                 alt={product.title}
                                 style={{ height: "200px", objectFit: "contain" }}
                             />

@@ -6,7 +6,7 @@ import { CiLocationOn, CiSearch } from "react-icons/ci";
 const TopNavbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-      <a className="navbar-brand d-flex align-items-center" href="#">
+      <a className="navbar-brand d-flex align-items-center" href="/">
         <img src={logo} alt="Amazon Logo" width="100" />
       </a>
       <div className="navbar-text ms-2" style={{ color: "#C0CCCC" }}>

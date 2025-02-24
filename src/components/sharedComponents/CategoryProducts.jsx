@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-function CategoryProducts({ category }) {
+function CategoryProducts() {
     const [products, setProducts] = useState([]);
     const navigate = useNavigate();
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const category = searchParams.get("category");
 
     useEffect(() => {
         if (category) {
