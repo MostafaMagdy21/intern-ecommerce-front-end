@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import icon from "../../images/Vector 5.png";
+
 
 function AllProducts() {
     const [products, setProducts] = useState([]);
