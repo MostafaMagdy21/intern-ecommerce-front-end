@@ -5,16 +5,17 @@ import { BrowserRouter } from "react-router-dom";
 import { Routing } from "./Routing";
 import SubNavbar from "./components/sharedComponents/SubNavbar";
 import TopNavbar from "./components/sharedComponents/TopNavbar";
+import Footer from "./components/sharedComponents/Footer";
 
 function App() {
-	return (
-		<BrowserRouter>
-			<Routing />
-			{/* <TopNavbar	/> */}
-			{/* <SubNavbar />
-      <Footer /> */}
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <TopNavbar />
+      <SubNavbar />
+      <Routing />
+      <Footer />
+    </BrowserRouter>
+  );
 }
 
 export default App;
