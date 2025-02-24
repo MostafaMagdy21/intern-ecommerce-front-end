@@ -6,12 +6,15 @@ import { Routing } from "./Routing";
 import SubNavbar from "./components/sharedComponents/SubNavbar";
 import TopNavbar from "./components/sharedComponents/TopNavbar";
 import Footer from "./components/sharedComponents/Footer";
+import Card1 from "./components/Home/Card/Card1";
+
 
 function App() {
   return (
     <BrowserRouter>
       <TopNavbar />
         <SubNavbar />
+        <Card1/>
       <Routing />
       <Footer />
     </BrowserRouter>

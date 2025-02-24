@@ -70,8 +70,8 @@ footer {
 /* DeepFooter */
 .deepFooter{
   background: #131A22;
-  width: 1440px;
-height: 266px;
+  width:100vw !important;
+min-height: 266px;
 h3{
   font-family: Noto Serif Gujarati;
 font-weight: 500;
@@ -90,4 +90,14 @@ letter-spacing: 0%;
 color: #999999;
 }
 
+}
+.card-1{
+  width: 319px;
+height: 472px;
+img{
+  width: 135px;
+height: 157px;
+gap: 5px;
+
+}
 }
