@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="inputsFooter d-flex justify-content-center align-items-center">
+        <div className="inputsFooter d-flex justify-content-center align-items-center mt-5">
           <div className="img mx-3">
             <img src={logo} alt="logo" />
           </div>
@@ -71,9 +71,9 @@ const Footer = () => {
             </div>
             <div className="d-flex align-items-center border border-secondary px-3 py-2 rounded bg-transparent text-white">
               <select className="form-select bg-transparent text-white border-0 me-3">
-                <option className="text-dark">English</option>
-                <option className="text-dark">French</option>
-                <option className="text-dark">Spanish</option>
+                <option className="text-dark"> <span><img src="/src/assets/India.svg" alt="india" /></span>India</option>
+                <option className="text-dark">Egypt</option>
+                <option className="text-dark">USA</option>
               </select>
             </div>
           </div>

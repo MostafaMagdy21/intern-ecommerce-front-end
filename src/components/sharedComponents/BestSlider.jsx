@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const ClothingSlider = () => {
+const BestSlider = () => {
   const [clothingItems, setClothingItems] = useState([]);
   const sliderRef = useRef(null);
 
@@ -12,7 +12,8 @@ const ClothingSlider = () => {
       .then((data) => {
         const clothes = data.filter(
           (item) =>
-            item.category === "men's clothing" ||
+            item.category === "electronics" ||
+            item.category === "jewelery" ||
             item.category === "women's clothing"
         );
         setClothingItems(clothes);
@@ -22,7 +23,7 @@ const ClothingSlider = () => {
 
   const scrollSlider = (direction) => {
     if (sliderRef.current) {
-      const itemWidth = sliderRef.current.firstChild.offsetWidth + 20; // Item width + gap
+      const itemWidth = sliderRef.current.firstChild.offsetWidth + 20;
       sliderRef.current.scrollBy({
         left: direction === "next" ? itemWidth : -itemWidth,
         behavior: "smooth",
@@ -32,7 +33,7 @@ const ClothingSlider = () => {
 
   return (
     <div className="clothing-slider-container">
-      <h4 className="slider-title">Best Sellers in Clothing & Accessories</h4>
+      <h4 className="slider-title">Min. 50% off | Unique kitchen finds | Amazon Brands & more <a href="/allproducts">See all</a></h4>
       <div className="clothing-slider-wrapper">
         <button className="slider-btn prev-btn" onClick={() => scrollSlider("prev")}>
           ❮
@@ -54,4 +55,4 @@ const ClothingSlider = () => {
   );
 };
 
-export default ClothingSlider;
+export default BestSlider;

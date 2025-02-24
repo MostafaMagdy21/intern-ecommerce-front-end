@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import AllProducts from './components/sharedComponents/Allproducts';
 import CategoryProducts from './components/sharedComponents/CategoryProducts'
 import SingleProduct from './components/sharedComponents/SingleProduct';
+import Home from "./components/Home/Home";
 
 
 export const Routing = () => {
@@ -9,7 +10,7 @@ export const Routing = () => {
 		<Routes>
 			<Route path="/login" element={<h1>Login</h1>} />
 			<Route path="/signup" element={<h1>Sign Up</h1>} />
-			<Route path="/" element={<h1>Home</h1>} />
+			<Route path="/" element={<Home />} />
 			<Route path="/allproducts" element={<><AllProducts/></>} />
 			<Route path="/product/:id" element={<SingleProduct />} />
 			<Route path="/CategoryProducts" element={<><CategoryProducts/></>} />

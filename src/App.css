@@ -38,21 +38,38 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  padding: 10px;
 }
+
 .btnFooter {
   color: aliceblue;
-  flex-grow: 1;
-
   background: #37475a !important;
   border: none;
-
-  padding: 17px 558px;
-  font-family: Noto Serif Gujarati;
+  padding: 15px 50px;
+  font-family: "Noto Serif Gujarati", serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 23.15px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
 }
+
+@media (max-width: 768px) {
+  .btnFooter {
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btnFooter {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
+
 footer {
   width: 100%;
   min-height: 548px;
@@ -70,8 +87,8 @@ footer {
 /* DeepFooter */
 .deepFooter {
   background: #131a22;
-  width: 1440px;
-  height: 266px;
+  width: 100vw !important;
+  min-height: 266px;
   h3 {
     font-family: Noto Serif Gujarati;
     font-weight: 500;
@@ -93,11 +110,16 @@ footer {
 /* Container Styles */
 .clothing-slider-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1380px;
+  max-height: 320px;
   margin: auto;
-  padding: 20px;
   background-color: white;
-  border-radius: 10px;
+  position: relative;
+  gap: 10px;
+  padding-top: 25px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+  padding-left: 30px;
 }
 
 /* Slider Title */
@@ -108,12 +130,23 @@ footer {
   text-align: left;
 }
 
+.slider-title a {
+  font-family: Noto Serif Gujarati;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23.15px;
+  letter-spacing: 0%;
+  color: #1f8394;
+  text-decoration: none;
+}
+
 /* Slider Wrapper */
 .clothing-slider-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding: 10px 0;
 }
 
 /* Scrollable Slider */
@@ -122,8 +155,9 @@ footer {
   gap: 20px;
   overflow-x: auto;
   scrollbar-width: thin;
-  scrollbar-color: #ccc transparent;
+  scrollbar-color: #8d8d8d transparent;
   scroll-behavior: smooth;
+  border-radius: 23px;
   padding-bottom: 10px;
 }
 
@@ -169,22 +203,45 @@ footer {
   border: 3px solid #ccc;
   width: 40px;
   height: 100px;
-  border-radius: 2px;
+  border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10; /* Ensures buttons appear on top */
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show Buttons on Hover */
+.clothing-slider-wrapper:hover .slider-btn {
+  opacity: 1;
 }
 
 .prev-btn {
-  left: -5px;
+  left: 0;
 }
 
 .next-btn {
-  right: -5px;
+  right: 0;
 }
 
 .slider-btn:hover {
   background: #f0f0f0;
+}
+
+/* Home */
+.Home {
+  background: #575757;
+}
+
+.card-1 {
+  width: 319px;
+  height: 472px;
+  img {
+    width: 135px;
+    height: 157px;
+    gap: 5px;
+  }
 }
