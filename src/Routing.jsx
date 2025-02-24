@@ -3,6 +3,7 @@ import AllProducts from './components/sharedComponents/Allproducts';
 import CategoryProducts from './components/sharedComponents/CategoryProducts'
 import SingleProduct from './components/sharedComponents/SingleProduct';
 
+
 export const Routing = () => {
 	return (
 		<Routes>
