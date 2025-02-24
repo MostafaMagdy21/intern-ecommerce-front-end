@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import icon from "../../assets/Vector 5.png";
 
 function AllProducts() {

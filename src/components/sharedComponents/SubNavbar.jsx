@@ -116,8 +116,6 @@ const SubNavbar = () => {
                 Home & Kitchen
               </a>
             </li>
-
-            {/* Dynamically Loaded Categories */}
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"

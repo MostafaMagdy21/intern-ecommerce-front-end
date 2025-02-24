@@ -58,6 +58,7 @@ const TopNavbar = () => {
       <a className="nav-link text-white " href="#">
         <BiCart size={40} /> Cart
       </a>
+    
     </nav>
   );
 };
