@@ -233,12 +233,16 @@ footer {
 
 /* Home */
 .Home {
-  background: #575757;
+  background: #575757 !important;
 }
+.cards{
 
+}
 .card-1 {
   width: 319px;
   height: 472px;
+  background: #fff;
+ 
   img {
     width: 135px;
     height: 157px;

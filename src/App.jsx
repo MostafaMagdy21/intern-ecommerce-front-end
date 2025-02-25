@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <TopNavbar />
         <SubNavbar />
-        {/*<Card1/> */}
+       
       <Routing />
       <Footer />
     </BrowserRouter>

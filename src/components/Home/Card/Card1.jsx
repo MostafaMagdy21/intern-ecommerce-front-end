@@ -1,37 +1,40 @@
+import { Dcard1 } from "./Dcard";
 
 const Card1 = () => {
   return (
-    <>
-    <div className="container mt-4">
-      <div className="card-1   m-3">
-        <h4 className="fw-bold">Revamp your home in style</h4>
-        <div className="row ">
-            
-          <div className="col-6 ">
-            <img src="/src/assets/Home/Cards/1/image 7.svg" className="" alt="Cushion covers" />
-            <p className="mt-1 small">Cushion covers, bedsheets & more</p>
+    <div className="container mt-4 my-2 ">
+      <div className="row gx-5 my-5 ">
+        {Dcard1.map((card, i) => (
+          <div className="col-lg-3 my-2 bg-light p-4 cards" key={i}>
+            <div className="card-1 m-3">
+              <h4 className="fw-bold">{card.title}</h4>
+              <div className="row">
+                <div className="col-6">
+                  <img src={card.imgs.img1.src} alt={card.imgs.img1.name} />
+                  <p className="mt-1 small">{card.imgs.img1.name}</p>
+                </div>
+                <div className="col-6">
+                  <img src={card.imgs.img2.src} alt={card.imgs.img2.name} />
+                  <p className="mt-1 small">{card.imgs.img2.name}</p>
+                </div>
+                <div className="col-6">
+                  <img src={card.imgs.img3.src} alt={card.imgs.img3.name} />
+                  <p className="mt-1 small">{card.imgs.img3.name}</p>
+                </div>
+                <div className="col-6">
+                  <img src={card.imgs.img4.src} alt={card.imgs.img4.name} />
+                  <p className="mt-1 small">{card.imgs.img4.name}</p>
+                </div>
+                <a href="#" className="text-primary fw-bold mt-2 d-block">
+                  {card.link}
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="col-6 ">
-            <img src="/src/assets/Home/Cards/1/Frame 57.svg" className="" alt="Figurines" />
-            <p className="mt-1 small">Figurines, vases & more</p>
-          </div>
-          <div className="col-6 ">
-            <img src="/src/assets/Home/Cards/1/Frame 58.svg" className="" alt="Home storage" />
-            <p className="mt-1 small">Home storage</p>
-          </div>
-          <div className="col-6 ">
-            <img src="/src/assets/Home/Cards/1/Frame 59.svg" className="" alt="Lighting solutions" />
-            <p className="mt-1 small">Lighting solutions</p>
-          </div>
-        <a href="#" className="text-primary fw-bold mt-2 d-block">Explore all</a>
-        </div>
+        ))}
       </div>
     </div>
+  );
+};
 
-
-
-    </>
-  )
-}
-
-export default Card1
+export default Card1;
