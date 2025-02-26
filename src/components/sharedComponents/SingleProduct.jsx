@@ -1,27 +1,60 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addToCart } from "../../redux/cartSlice";
 
 const SingleProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [quantity, setQuantity] = useState(1);
+  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    setLoading(true);
+    setError(null);
+
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
         setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.error("Fetch error:", err);
+        setError("Failed to load product. Please try again.");
+        setLoading(false);
+      });
   }, [id]);
+
+  const handleAddToCart = () => {
+    if (product) {
+      dispatch(addToCart({ ...product, quantity }));
+      setQuantity(1); 
+      alert(`Added ${quantity} item(s) to cart!`);
+    }
+  };
+
+  const handleQuantityChange = (e) => {
+    const value = parseInt(e.target.value, 10);
+    setQuantity(value >= 1 ? value : 1); // Prevent negative or zero values
+  };
 
   if (loading) {
     return <h2 className="text-center mt-5">Loading...</h2>;
   }
 
+  if (error) {
+    return <h2 className="text-center mt-5 text-danger">{error}</h2>;
+  }
+
+  if (!product) {
+    return <h2 className="text-center mt-5 text-danger">Product not found!</h2>;
+  }
+
   return (
-    <div className="container mt-4">
+    <div className="container my-4">
       <div className="row">
         <div className="col-md-6">
           <img src={product.image} alt={product.title} className="img-fluid w-50" />
@@ -57,10 +90,21 @@ const SingleProduct = () => {
           </div>
           <div className="product-quantity mt-3">
             <label htmlFor="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="10" defaultValue="1" />
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              max="10"
+              value={quantity}
+              onChange={handleQuantityChange}
+            />
           </div>
           <div className="product-actions mt-3">
-            <button className="btn btn-warning me-2">Add to Cart</button>
+            <button className="btn btn-warning me-2" onClick={handleAddToCart}>
+              Add to Cart
+            </button>
+
             <button className="btn btn-danger">Buy Now</button>
           </div>
           <div className="seller-info mt-3">

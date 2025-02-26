@@ -55,7 +55,7 @@ const TopNavbar = () => {
           & Orders
         </a>
       </div>
-      <a className="nav-link text-white " href="#">
+      <a className="nav-link text-white " href="/cart" >
         <BiCart size={40} /> Cart
       </a>
     
