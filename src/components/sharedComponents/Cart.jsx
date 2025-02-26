@@ -66,7 +66,7 @@ const Cart = () => {
           </div>
 
           <div className="col-xl-4">
-            <div className="card text-white sticky-top" style={{ top: "25vh" }}>
+            <div className="card text-white sticky-top" style={{ top: "25vh", zIndex: 1 }}>
               <div className="card-body">
                 <h3 className="text-center fw-bold mb-4 text-dark">Summary</h3>
                 <hr className="border-dark" />
