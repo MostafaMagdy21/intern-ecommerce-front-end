@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify"; // Import toast
+import "react-toastify/dist/ReactToastify.css"; // Import styles
 import { addToCart } from "../../redux/cartSlice";
+import { addToFav } from "../../redux/favSlice";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -9,6 +12,7 @@ const SingleProduct = () => {
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState(null);
+  const { favItems } = useSelector((state) => state.fav);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,13 +36,20 @@ const SingleProduct = () => {
     if (product) {
       dispatch(addToCart({ ...product, quantity }));
       setQuantity(1); 
-      alert(`Added ${quantity} item(s) to cart!`);
+      toast.success(`${quantity} item(s) added to cart! `, { autoClose: 2000 });
     }
   };
 
   const handleQuantityChange = (e) => {
     const value = parseInt(e.target.value, 10);
     setQuantity(value >= 1 ? value : 1); // Prevent negative or zero values
+  };
+
+  const handleAddToFavorites = () => {
+    if (product) {
+      dispatch(addToFav(product));
+      toast.success(`${product.title} added to favorites `, { autoClose: 2000 });
+    }
   };
 
   if (loading) {
@@ -55,6 +66,7 @@ const SingleProduct = () => {
 
   return (
     <div className="container my-4">
+      <ToastContainer position="top-center" autoClose={2000} /> 
       <div className="row">
         <div className="col-md-6">
           <img src={product.image} alt={product.title} className="img-fluid w-50" />
@@ -112,7 +124,9 @@ const SingleProduct = () => {
             <p>Monatik LLC Monatik LLC Secure transaction</p>
           </div>
           <div className="add-to-list mt-3">
-            <button className="btn btn-outline-secondary">Add to List</button>
+            <button className="btn btn-outline-secondary" onClick={handleAddToFavorites}>
+              Add to List
+            </button>
           </div>
         </div>
       </div>

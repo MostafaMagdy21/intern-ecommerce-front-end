@@ -249,3 +249,7 @@ footer {
     gap: 5px;
   }
 }
+
+.hover-underline:hover {
+  text-decoration: underline !important;
+color: rgb(0, 0, 121);}

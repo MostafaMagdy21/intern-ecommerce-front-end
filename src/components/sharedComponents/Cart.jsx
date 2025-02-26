@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity } from "../../redux/cartSlice"; // Ensure correct import
+import {removeFromCart, clearCart, increaseQuantity, decreaseQuantity } from "../../redux/cartSlice"; // Ensure correct import
 import emptyCart from "../../images/emtyCart.png";
 
 const Cart = () => {
-  const { cartItems, totalQuantity, totalPrice } = useSelector((state) => state.cart);
+  const { cartItems, totalPrice } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   return (

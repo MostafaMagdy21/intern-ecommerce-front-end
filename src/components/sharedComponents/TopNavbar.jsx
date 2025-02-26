@@ -3,11 +3,15 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/AmazonLogo.svg";
 import { BiCart } from "react-icons/bi";
 import { CiLocationOn, CiSearch } from "react-icons/ci";
+import { FaRegHeart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const TopNavbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const navigate = useNavigate();
+  const {favItems} = useSelector((state) => state.fav);
+  const {cartItems} = useSelector((state) => state.cart);
 
   useEffect(() => {
     if (searchQuery.trim()) {
@@ -67,10 +71,11 @@ const TopNavbar = () => {
           <CiSearch size={30} />
         </button>
         {suggestions.length > 0 && (
-          <ul className="list-group position-absolute w-100 mt-5 bg-white shadow" style={{ zIndex: 10 }}>
+          <ul className="list-group position-absolute w-100  bg-white shadow overflow-y-scroll" style={{marginTop: '55px', zIndex: 10 ,height: '200px'}}>
             {suggestions.map((item) => (
-              <li key={item.id} className="list-group-item" onClick={() => handleSuggestionClick(item.id)} style={{ cursor: 'pointer' }}>
-                {item.title}
+              <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center" onClick={() => handleSuggestionClick(item.id)} style={{ cursor: 'pointer' }}>
+                <p>{item.title}</p>
+                <img src={item.image}  width="30" />
               </li>
             ))}
           </ul>
@@ -98,8 +103,22 @@ const TopNavbar = () => {
           & Orders
         </a>
       </div>
-      <a className="nav-link text-white" href="/cart">
+      <a href="/wishlist" className="position-relative">
+  <FaRegHeart className="text-white me-3" size={30} />
+  {favItems?.length > 0 && (
+    <span style={{ fontSize: "10px" , top: '-3px', padding: '2px 5px'}} className=" bg-danger text-white position-absolute start-50 translate-middle rounded-3">
+      {favItems.length}
+    </span>
+  )}
+</a>
+     
+      <a className="nav-link text-white position-relative" href="/cart">
         <BiCart size={40} /> Cart
+        {cartItems?.length > 0 && (
+          <span style={{ fontSize: "10px" , top: '5px', right: '25px', padding: '2px 5px'}} className=" bg-danger text-white position-absolute  translate-middle rounded-3">
+            {cartItems.length}
+          </span>
+        )}
       </a>
     </nav>
   );
