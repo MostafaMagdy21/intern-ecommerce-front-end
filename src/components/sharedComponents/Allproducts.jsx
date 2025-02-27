@@ -87,7 +87,6 @@ function AllProducts() {
                       {isFav ? <FaHeart className="text-danger fs-4" /> : <FaRegHeart className="text-danger fs-4" />}
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>

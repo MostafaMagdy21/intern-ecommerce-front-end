@@ -111,7 +111,7 @@ footer {
 /* Container Styles */
 .clothing-slider-container {
   width: 100%;
-  max-width: 1380px;
+  max-width: 1300px;
   max-height: 320px;
   margin: auto;
   background-color: white;
@@ -237,9 +237,7 @@ footer {
   background: #575757 !important;
 }
 .cards {
-  margin-top: -150px;
-  z-index: 999;
-  position: relative;
+
 }
 
 .card-1 {
@@ -263,3 +261,90 @@ footer {
 .hover-underline:hover {
   text-decoration: underline !important;
 color: rgb(0, 0, 121);}
+
+
+.custom-card {
+  z-index: 999;
+  position: relative;
+  padding: 15px;
+  min-height: 472px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.custom-card h5 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.custom-card img {
+  width: 100%;
+  height: 116px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.custom-card .row {
+  flex-grow: 1;
+}
+
+.custom-card a {
+  font-family: "Noto Serif Gujarati", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23.15px;
+  letter-spacing: 0%;
+  color: #1f8394 !important;
+  text-decoration: none;
+  margin-top: auto;
+  display: block;
+  text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .custom-card {
+    min-height: auto;
+    padding: 10px;
+  }
+  
+  .custom-card img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-card {
+    min-height: auto;
+  }
+  
+  .custom-card img {
+    height: 75px;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-card {
+    padding: 10px;
+  }
+  
+  .custom-card img {
+    height: 70px;
+  }
+
+  .custom-card h5 {
+    font-size: 1rem;
+  }
+
+  .custom-card a {
+    font-size: 14px;
+  }
+}
+
+
+.HomeContent{
+  top: -120px;
+  z-index: 999;
+  position: relative;
+}

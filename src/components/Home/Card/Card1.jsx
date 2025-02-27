@@ -1,37 +1,71 @@
-import { Dcard1 } from "./Dcard";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Card1 = () => {
+  const [products, setProducts] = useState([]);
+
+  const cardTitles = [
+    "Most Loved Product",
+    "Product on Offers",
+    "Best Seller",
+    "Trending Now",
+    "Exclusive Collection",
+    "Hot Deals Today",
+    "Limited Stock",
+    "Top Rated Picks",
+  ];
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        const data = await response.json();
+        setProducts(data.slice(0, 8)); // Fetch 8 products
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
-    <div className="container cards" >
-      <div className="row gx-5 mb-5 ">
-        {Dcard1.map((card, i) => (
-          <div className="col-lg-3    " key={i}>
-            <div className="card-1 m-3 p-2">
-              <h4 className="fw-bold">{card.title}</h4>
-              <div className="row">
-                <div className="col-6">
-                  <img src={card.imgs.img1.src} alt={card.imgs.img1.name} />
-                  <p className="mt-1 small">{card.imgs.img1.name}</p>
+    <div className="container mt-4 my-2">
+      <div className="row gx-4 my-4">
+        {products.map((product, i) => {
+          const imgIndexes = [(i + 1) % 8, (i + 2) % 8, (i + 3) % 8, i];
+
+          return (
+            <div className="col-lg-3 col-md-6 col-sm-12 my-2" key={product.id}>
+              <div className="custom-card bg-light p-3 shadow-sm">
+                <h5 className="fw-bold mb-3">{cardTitles[i % cardTitles.length]}</h5>
+                <div className="row g-2">
+                  {imgIndexes.map((index, j) => (
+                    <div className="col-6" key={j}>
+                      <Link to={`/product/${products[index]?.id || product.id}`}>
+                        <img
+                          src={products[index]?.image || product.image}
+                          alt={products[index]?.title || product.title}
+                          className="img-fluid rounded"
+                        />
+                      </Link>
+                      <p className="small text-muted mt-1">
+                        {products[index]?.title.split(" ").slice(0, 3).join(" ") || product.title}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-                <div className="col-6">
-                  <img src={card.imgs.img2.src} alt={card.imgs.img2.name} />
-                  <p className="mt-1 small">{card.imgs.img2.name}</p>
-                </div>
-                <div className="col-6">
-                  <img src={card.imgs.img3.src} alt={card.imgs.img3.name} />
-                  <p className="mt-1 small">{card.imgs.img3.name}</p>
-                </div>
-                <div className="col-6">
-                  <img src={card.imgs.img4.src} alt={card.imgs.img4.name} />
-                  <p className="mt-1 small">{card.imgs.img4.name}</p>
-                </div>
-                <a href="#" className="text-primary fw-bold mt-2 d-block">
-                  {card.link}
-                </a>
+                {/* ✅ "See more" now links to the category page */}
+                <Link 
+                  to={`/categoryproducts?category=${encodeURIComponent(product.category)}`} 
+                  className="text-primary fw-bold mt-3 d-block"
+                >
+                  See more
+                </Link>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
