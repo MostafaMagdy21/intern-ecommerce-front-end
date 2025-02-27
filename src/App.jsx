@@ -9,14 +9,13 @@ import Footer from "./components/sharedComponents/Footer";
 import Card1 from "./components/Home/Card/Card1";
 import { ToastContainer } from "react-toastify";
 
-
 function App() {
   return (
     <BrowserRouter>
-    <ToastContainer position="top-right" autoClose={2000} />
+      <ToastContainer position="top-right" autoClose={2000} />
       <TopNavbar />
-        <SubNavbar />
-       
+      <SubNavbar />
+
       <Routing />
       <Footer />
     </BrowserRouter>

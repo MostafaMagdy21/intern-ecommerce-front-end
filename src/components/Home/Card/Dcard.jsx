@@ -19,7 +19,7 @@ export const Dcard1 = [
         name: `Lighting solutions`,
       },
     },
-    link : `Explore all`
+    link: `Explore all`,
   },
   {
     title: `Appliances for your home| Up to 55% off`,
@@ -41,7 +41,7 @@ export const Dcard1 = [
         name: `Washing machines`,
       },
     },
-    link: `See more`
+    link: `See more`,
   },
   {
     title: `Starting $149 | Headphones`,
@@ -63,7 +63,7 @@ export const Dcard1 = [
         name: `Starting ₹149| Zebronics`,
       },
     },
-    link:`See all offers`
+    link: `See all offers`,
   },
   {
     title: `Starting $99| Amazon Brands & more`,
@@ -85,7 +85,7 @@ export const Dcard1 = [
         name: `Up to 60% off| Jackets,dresses &...`,
       },
     },
-    link:`Shop now`
+    link: `Shop now`,
   },
   {
     title: `Automotive essentials| Up to 60% off`,
@@ -107,7 +107,7 @@ export const Dcard1 = [
         name: `Vacuum cleaner`,
       },
     },
-    link:`See more`
+    link: `See more`,
   },
   {
     title: `Up to 60% off | Styles for women`,
@@ -129,7 +129,7 @@ export const Dcard1 = [
         name: `Fashion jewellery`,
       },
     },
-    link:`End of season sale`
+    link: `End of season sale`,
   },
   {
     title: `Starting ₹199 | Amazon Brands & more`,
@@ -151,7 +151,7 @@ export const Dcard1 = [
         name: `Up to 60% off | Home decor`,
       },
     },
-    link:`See more`
+    link: `See more`,
   },
   {
     title: `Starting ₹99 | Home improvement essentials`,
@@ -173,6 +173,6 @@ export const Dcard1 = [
         name: `Extension boards, plugs & more`,
       },
     },
-    link:`Explore more`
+    link: `Explore more`,
   },
 ];
