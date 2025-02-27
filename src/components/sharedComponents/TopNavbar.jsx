@@ -123,7 +123,7 @@ const TopNavbar = () => {
             <span className="position-absolute bg-danger text-white rounded-3"
               style={{
                 fontSize: "10px",
-                top: "2px",
+                top: "-6px",
                 right: "-8px",
                 padding: "2px 5px"
               }}>
@@ -134,13 +134,13 @@ const TopNavbar = () => {
 
         {/* Cart */}
         <a className="nav-link text-white position-relative me-3" href="/cart">
-          <BiCart size={40} />
+          <BiCart size={40} />  Cart
           {cartItems?.length > 0 && (
             <span className="position-absolute bg-danger text-white rounded-3"
               style={{
                 fontSize: "10px",
-                top: "8px",
-                right: "-10px",
+                top: "0px",
+                right: "32px",
                 padding: "2px 5px"
               }}>
               {cartItems.length}

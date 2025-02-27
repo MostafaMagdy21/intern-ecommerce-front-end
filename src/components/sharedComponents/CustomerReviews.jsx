@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const CustomerReviews = () => {
   const { id } = useParams();
@@ -7,7 +8,6 @@ const CustomerReviews = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Mock reviews for now (replace with API later)
     const mockReviews = [
       {
         reviewer: "Brooke",
@@ -60,92 +60,56 @@ const CustomerReviews = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg">
-      {/* Customer Reviews Header */}
-      <h2 className="text-2xl font-bold text-gray-900">Customer Reviews</h2>
-
-      {/* Overall Rating Section */}
-      <div className="flex items-center gap-2 mt-2">
-        <span className="text-yellow-500 text-xl">★★★★☆</span>
-        <span className="text-gray-700 text-lg font-medium">4.1 out of 5</span>
-      </div>
-
-      {/* Rating Breakdown Section */}
-      <div className="mt-3">
-        <h3 className="text-lg font-semibold text-gray-700">1 global rating</h3>
-        <div className="mt-2 space-y-2">
-          {[
-            { stars: 5, percentage: 71 },
-            { stars: 4, percentage: 23 },
-            { stars: 3, percentage: 0 },
-            { stars: 2, percentage: 6 },
-            { stars: 1, percentage: 0 },
-          ].map((item) => (
-            <div key={item.stars} className="flex items-center">
-              <span className="w-12 text-gray-600">{item.stars} star</span>
-              <div className="w-48 h-3 bg-gray-200 rounded overflow-hidden ml-2">
-                <div
-                  className="h-full bg-yellow-500"
-                  style={{ width: `${item.percentage}%` }}
-                />
+    <div className="container mt-5 p-4 ">
+      <div className="row gap-5 d-flex ">
+        <div className="col-lg-4">
+          <h2 className="fw-bold">Customer Reviews</h2>
+          <div className="d-flex align-items-center mt-2">
+            <span className="text-warning fs-4">★★★★☆</span>
+            <span className="ms-2 text-secondary fs-5">4.1 out of 5</span>
+          </div>
+          <div className="mt-3">
+            <h5 className="fw-semibold">1 global rating</h5>
+            {[5, 4, 3, 2, 1].map((star) => (
+              <div key={star} className="d-flex align-items-center my-1">
+                <span className="me-2">{star} star</span>
+                <div className="progress flex-grow-1" style={{ height: "10px" }}>
+                  <div
+                    className="progress-bar bg-warning"
+                    style={{ width: `${star === 4 ? 71 : star === 2 ? 6 : 0}%` }}
+                  ></div>
+                </div>
+                <span className="ms-2 text-secondary">
+                  {star === 4 ? 71 : star === 2 ? 6 : 0}%
+                </span>
               </div>
-              <span className="ml-2 text-gray-600">{item.percentage}%</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* Reviews Section */}
-      <div className="mt-6 space-y-6">
-        {reviews.length > 0 ? (
-          reviews.map((review, index) => (
-            <div key={index} className="border-b pb-4">
-              {/* Profile Image & Name */}
-              <div className="flex items-center gap-3">
-                <img
-                  src={review.profileImage}
-                  alt={review.reviewer}
-                  className="w-10 h-10 rounded-full"
-                />
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {review.reviewer}
-                </h3>
+        <div className="col-lg-6">
+          <div >
+            {reviews.map((review, index) => (
+              <div key={index} className={`pb-3 mb-3 ${index !== reviews.length - 1 ? "border-bottom" : ""}`}>
+                <div className="d-flex align-items-center">
+                  <img
+                    src={review.profileImage}
+                    alt={review.reviewer}
+                    className="rounded-circle me-3"
+                    width="40"
+                    height="40"
+                  />
+                  <h5 className="mb-0">{review.reviewer}</h5>
+                </div>
+                <div className="text-warning mt-1">{"★".repeat(review.rating)}{"☆".repeat(5 - review.rating)}</div>
+                <h6 className="fw-bold mt-1">{review.title}</h6>
+                <p className="text-muted mb-1">Reviewed on {new Date(review.date).toLocaleDateString()}</p>
+                {review.verified && <p className="text-success fw-semibold">Verified Purchase</p>}
+                <p>{review.comment}</p>
+                <button className="btn btn-link p-0 text-primary">Report</button>
               </div>
-
-              {/* Star Rating */}
-              <div className="text-yellow-500 text-lg mt-1">
-                {"★".repeat(review.rating)}{" "}
-                {"☆".repeat(5 - review.rating)}
-              </div>
-
-              {/* Review Title */}
-              <h4 className="text-md font-bold text-gray-800 mt-1">
-                {review.title}
-              </h4>
-
-              {/* Review Date & Location */}
-              <p className="text-gray-600 text-sm">
-                Reviewed in the United States on{" "}
-                {new Date(review.date).toLocaleDateString()}
-              </p>
-
-              {/* Verified Purchase Tag */}
-              {review.verified && (
-                <p className="text-orange-600 font-semibold text-sm mt-1">
-                  Verified Purchase
-                </p>
-              )}
-
-              {/* Review Content */}
-              <p className="text-gray-700 mt-2">{review.comment}</p>
-
-              {/* Report Button */}
-              <button className="text-blue-500 mt-2 text-sm">Report</button>
-            </div>
-          ))
-        ) : (
-          <p className="text-gray-600">No reviews available for this product.</p>
-        )}
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
