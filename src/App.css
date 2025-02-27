@@ -355,3 +355,24 @@ color: rgb(0, 0, 121);}
   position: relative;
 }
 
+/* SideBar */
+.SideBar{
+  h3{
+    font-family: Inter;
+  font-weight: 600;
+  font-size: 14.23px;
+  line-height: 17.22px;
+  letter-spacing: 0%;
+  
+  }
+  label{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12.45px;
+    line-height: 15.06px;
+    letter-spacing: 0%;
+    text-align: center;
+    
+  }
+
+}
