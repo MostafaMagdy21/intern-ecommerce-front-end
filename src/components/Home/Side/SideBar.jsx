@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <div className="SideBar">
       
-      <button className="btn btn-primary m-3" onClick={() => setShow(true)}>
+      <button className="btn btn-secondary m-3" onClick={() => setShow(true)}>
         ☰ Filters
       </button>
 
