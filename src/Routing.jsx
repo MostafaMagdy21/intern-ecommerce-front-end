@@ -5,13 +5,15 @@ import SingleProduct from './components/sharedComponents/SingleProduct';
 import Home from "./components/Home/Home";
 import Cart from "./components/sharedComponents/Cart";
 import Wishlist from "./components/sharedComponents/wishlist";
+import Login from "./components/sharedComponents/Login";
+import Register from "./components/sharedComponents/Register";
 
 
 export const Routing = () => {
 	return (
 		<Routes>
-			<Route path="/login" element={<h1>Login</h1>} />
-			<Route path="/signup" element={<h1>Sign Up</h1>} />
+			<Route path="/login" element={ <Login />} />
+			<Route path="/register" element={<Register />} />
 			<Route path="/" element={<Home />} />
 			<Route path="/cart" element={<Cart />} />
 			<Route path="/wishlist" element={<Wishlist />} />

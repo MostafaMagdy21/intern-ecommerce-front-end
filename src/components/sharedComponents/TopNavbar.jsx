@@ -93,7 +93,7 @@ const TopNavbar = () => {
       </div>
       <div className="text-white me-3">
         Hello, sign in <br />
-        <a href="#" className="text-white fw-bold text-decoration-none">
+        <a href="/register" className="text-white fw-bold text-decoration-none">
           Account & Lists
         </a>
       </div>

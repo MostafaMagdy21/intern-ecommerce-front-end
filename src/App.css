@@ -30,28 +30,26 @@ body {
   letter-spacing: 0%;
 }
 
-/*------------ footer -------------*/
+/* Footer Top Button */
 .BTNfooter {
-  background: #37475a !important;
+  background: #37475a;
   width: 100%;
   text-align: center;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   padding: 10px;
 }
 
 .btnFooter {
   color: aliceblue;
-  background: #37475a !important;
+  background: #37475a;
   border: none;
   padding: 15px 50px;
   font-family: "Noto Serif Gujarati", serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 23.15px;
   text-align: center;
   width: 100%;
   max-width: 600px;
@@ -71,41 +69,50 @@ body {
   }
 }
 
+/* Main Footer */
 footer {
   width: 100%;
   min-height: 548px;
   background: #232f3e;
-  li {
-    list-style: none;
-  }
-  .footer-section {
-    margin-top: 50px;
-  }
-  .container {
-    border-bottom: #4c4c4c 1px solid;
-  }
 }
-/* DeepFooter */
+
+footer li {
+  list-style: none;
+}
+
+.footer-section {
+  margin-top: 50px;
+}
+
+.container {
+  border-bottom: 1px solid #4c4c4c;
+}
+
+/* Deep Footer */
 .deepFooter {
   background: #131a22;
-  width: 100vw !important;
+  width: 100%;
   min-height: 266px;
-  h3 {
-    font-family: Noto Serif Gujarati;
-    font-weight: 500;
-    font-size: 14.67px;
-    line-height: 21.23px;
-    letter-spacing: 0%;
-    color: #fff;
-  }
-  p {
-    font-family: Noto Serif Gujarati;
-    font-weight: 300;
-    font-size: 14.67px;
-    line-height: 21.23px;
-    letter-spacing: 0%;
-    color: #999999;
-  }
+}
+
+.deepFooter h3,
+.deepFooter p {
+  font-family: "Noto Serif Gujarati", serif;
+  font-size: 14.67px;
+  color: #fff;
+}
+
+.deepFooter p {
+  font-weight: 300;
+  color: #999999;
+}
+
+/* Footer Bottom */
+.feramFooter {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #ffffff;
 }
 
 /* Container Styles */
@@ -342,9 +349,9 @@ color: rgb(0, 0, 121);}
   }
 }
 
-
 .HomeContent{
   top: -120px;
   z-index: 999;
   position: relative;
 }
+

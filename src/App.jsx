@@ -15,7 +15,6 @@ function App() {
       <ToastContainer position="top-right" autoClose={2000} />
       <TopNavbar />
       <SubNavbar />
-
       <Routing />
       <Footer />
     </BrowserRouter>
