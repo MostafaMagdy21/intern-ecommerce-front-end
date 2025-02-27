@@ -18,6 +18,13 @@ const DeepFooter = () => {
             );
           })}
         </div>
+        <div className="feramFooter d-flex justify-content-around align-items-center">
+          <p>Conditons of Use & Sale</p>
+          <p>Privacy Notice</p>
+          <p>Interset-Based Ads</p>
+          <p>1996-2024, Amazon.com, Inc. or its affiliates</p>
+
+        </div>
       </div>
     </div>
    

@@ -5,6 +5,7 @@
 }
 body {
   overflow-x: hidden;
+  width: 100vw !important;
 }
 
 /*--------- Navbar ---------- */
@@ -235,18 +236,27 @@ footer {
 .Home {
   background: #575757 !important;
 }
-.cards{
-
+.cards {
+  margin-top: -150px;
+  z-index: 999;
+  position: relative;
 }
+
 .card-1 {
   width: 319px;
-  height: 472px;
+  min-height: 472px;
   background: #fff;
+  border-radius: 10px;
+  z-index: 99;
  
   img {
     width: 135px;
     height: 157px;
     gap: 5px;
+  }
+  a{
+    text-decoration: none;
+    
   }
 }
 

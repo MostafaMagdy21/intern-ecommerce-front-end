@@ -9,13 +9,13 @@ const Home = () => {
     <>
       <div className="Home">
         <Mainslick/>
-        <HomeCard/>
       <Card1/>
-        <br></br>
+       
         <ClothingSlider />
-        <br></br>
+        <HomeCard/>
+       
         <BestSlider />
-        <br></br>
+       
         
       </div>
     </>

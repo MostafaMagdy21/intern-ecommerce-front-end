@@ -2,11 +2,11 @@ import { Dcard1 } from "./Dcard";
 
 const Card1 = () => {
   return (
-    <div className="container mt-4 my-2 ">
-      <div className="row gx-5 my-5 ">
+    <div className="container cards" >
+      <div className="row gx-5 mb-5 ">
         {Dcard1.map((card, i) => (
-          <div className="col-lg-3 my-2 bg-light p-4 cards" key={i}>
-            <div className="card-1 m-3">
+          <div className="col-lg-3    " key={i}>
+            <div className="card-1 m-3 p-2">
               <h4 className="fw-bold">{card.title}</h4>
               <div className="row">
                 <div className="col-6">
