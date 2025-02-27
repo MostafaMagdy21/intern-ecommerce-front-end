@@ -30,13 +30,13 @@ const Card1 = () => {
   }, []);
 
   return (
-    <div className="container mt-4 my-2">
+    <div className="custom-card mt-4 my-2">
       <div className="row gx-4 my-4">
         {products.map((product, i) => {
           const imgIndexes = [(i + 1) % 8, (i + 2) % 8, (i + 3) % 8, i];
 
           return (
-            <div className="col-lg-3 col-md-6 col-sm-12 my-2" key={product.id}>
+            <div className="col-lg-3 col-md-6 col-sm-12 my-2 cardWidth" key={product.id}>
               <div className="custom-card bg-light p-3 shadow-sm">
                 <h5 className="fw-bold mb-3">{cardTitles[i % cardTitles.length]}</h5>
                 <div className="row g-2">
@@ -55,7 +55,6 @@ const Card1 = () => {
                     </div>
                   ))}
                 </div>
-                {/* ✅ "See more" now links to the category page */}
                 <Link 
                   to={`/categoryproducts?category=${encodeURIComponent(product.category)}`} 
                   className="text-primary fw-bold mt-3 d-block"

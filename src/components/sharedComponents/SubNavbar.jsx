@@ -53,6 +53,60 @@ const SubNavbar = () => {
                 </a>
               </li>
             ))}
+
+            <li className="nav-item">
+              <a
+                className="nav-link"
+                onClick={() => navigate("/")}
+                href="#"
+                style={{ cursor: "pointer" }}
+              >
+                Sell
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="nav-link"
+                onClick={() => navigate("/allproducts")}
+                style={{ cursor: "pointer" }}
+              >
+                Best Sellers
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="nav-link"
+                onClick={() => navigate("/")}
+                style={{ cursor: "pointer" }}
+              >
+                Today’s Deals
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#" style={{ cursor: "pointer" }}>
+                Customer Service
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#" style={{ cursor: "pointer" }}>
+                New Releases
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#" style={{ cursor: "pointer" }}>
+                Home & Kitchen
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#" style={{ cursor: "pointer" }}>
+                Amazon Pay
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#" style={{ cursor: "pointer" }}>
+                Prime
+              </a>
+            </li>
           </ul>
         </div>
       </div>

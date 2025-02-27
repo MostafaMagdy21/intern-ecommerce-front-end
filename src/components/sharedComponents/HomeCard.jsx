@@ -41,7 +41,7 @@ const Card1 = () => {
   }, []);
 
   return (
-    <div className="container mt-4 my-2">
+    <div className="custom-card mt-4 my-2">
       <div className="row gx-4 my-4">
         {productGroups.map((group, index) => (
           <div className="col-lg-3 col-md-6 col-sm-12 my-2" key={index}>

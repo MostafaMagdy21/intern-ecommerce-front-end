@@ -115,10 +115,11 @@ footer li {
   color: #ffffff;
 }
 
+
 /* Container Styles */
 .clothing-slider-container {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1440px;
   max-height: 320px;
   margin: auto;
   background-color: white;
@@ -242,6 +243,7 @@ footer li {
 /* Home */
 .Home {
   background: #575757 !important;
+  margin-bottom: -80px;
 }
 .cards {
 
@@ -273,11 +275,13 @@ color: rgb(0, 0, 121);}
 .custom-card {
   z-index: 999;
   position: relative;
-  padding: 15px;
+  padding: 10px;
   min-height: 472px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  max-width: 1460px;
+  width: 100%;
+  margin: auto;
 }
 
 .custom-card h5 {
