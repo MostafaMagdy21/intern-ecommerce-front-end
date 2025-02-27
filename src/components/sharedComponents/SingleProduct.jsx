@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify"; // Import toast
 import "react-toastify/dist/ReactToastify.css"; // Import styles
 import { addToCart } from "../../redux/cartSlice";
 import { addToFav } from "../../redux/favSlice";
+import CustomerReviews from "./CustomerReviews";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -96,11 +97,11 @@ const SingleProduct = () => {
               <li>Care Instructions: Machine wash or professional dry clean</li>
             </ul>
           </div>
-          <div className="product-delivery mt-3">
+          {/* <div className="product-delivery mt-3">
             <p>Delivery to Riyadh - Update Location</p>
             <p>Usually ships within 4 to 5 days</p>
-          </div>
-          <div className="product-quantity mt-3">
+          </div> */}
+          {/* <div className="product-quantity mt-3">
             <label htmlFor="quantity">Quantity:</label>
             <input
               type="number"
@@ -111,7 +112,7 @@ const SingleProduct = () => {
               value={quantity}
               onChange={handleQuantityChange}
             />
-          </div>
+          </div> */}
           <div className="product-actions mt-3">
             <button className="btn btn-warning me-2" onClick={handleAddToCart}>
               Add to Cart
@@ -130,6 +131,8 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
+      <hr />
+      <CustomerReviews/>
     </div>
   );
 };

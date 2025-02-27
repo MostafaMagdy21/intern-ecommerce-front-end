@@ -16,6 +16,7 @@ const Home = () => {
         <br></br>
         <BestSlider />
         <br></br>
+        
       </div>
     </>
   );

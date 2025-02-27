@@ -1,4 +1,5 @@
 import { useState } from "react";
+import polygon from '../../images/Polygon-black.png'; 
 
 function Login() {
     const [mobile, setMobile] = useState("");
@@ -28,10 +29,10 @@ function Login() {
 
     return (
         <>
-            <div className="register mx-auto">
+            <div className="register mx-auto ">
                 <h2>Amazon<span className="fs-6">.in</span></h2>
                 <img src="../../images/Vector.svg" className="w-100" alt="" />
-                <div className="card mx-auto mb-3">
+                <div className="card mx-auto mb-3 p-5">
                     <h3 className="text-start mb-4">Sign in</h3>
                     <form className="text-start" onSubmit={handleLogin}>
                         <label htmlFor="mobile" className="form-label">Mobile Phone Number</label>
@@ -54,15 +55,20 @@ function Login() {
                     <div className="text-start">
                         <h6>By continuing, you agree to Amazon’s <a href="">Conditions of Use</a></h6>
                         <h6 className="mb-3">and <a href="">Privacy Notice</a></h6>
-                        <a href="" className="text-decoration-none">Need Help?</a>
+                        <a href="" className="text-decoration-none"><img src={polygon} alt="" /> Need Help?</a>
                         <hr />
                         <h4>Buying For Work?</h4>
                         <a href="" className="text-decoration-none">Shop on Amazon Business</a>
                     </div>
                 </div>
                 <div>
-                    <h6>New to Amazon?</h6>
-                    <button className="btn btn-transparent border">Create Your Amazon Account</button>
+                 <div className="d-flex align-items-center text-secondary my-3 w-50 mx-auto">
+                   <div className="flex-grow-1 border-bottom"></div>
+                    <span className="mx-2">New to Amazon?</span>
+                      <div className="flex-grow-1 border-bottom"></div>
+                 </div>
+
+                    <button onClick={() => window.location.href = "/register"} className="btn btn-transparent border w-50">Create Your Amazon Account</button>
                 </div>
                 
                 <hr className="w-100"/>

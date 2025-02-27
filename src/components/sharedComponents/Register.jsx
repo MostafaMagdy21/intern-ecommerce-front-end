@@ -1,5 +1,6 @@
 import { useState } from "react";
-import {logo} from '../../images/Vector.png'; 
+import logo from '../../images/Vector.svg'; 
+import polygon from '../../images/Polygon 2.png'; 
 
 function Register() {
     const [name, setName] = useState("");
@@ -34,9 +35,10 @@ function Register() {
 
     return (
         <>
-            <div className="register mx-auto">
-                <h2>Amazon<span className="fs-6">.in</span></h2>
-                <img src={logo} className="w-100" alt="" />
+            <div className="register mx-auto text-center my-5">
+                <h2 className="fw-bold mb-0 mt-">amazon<span className="fs-6">.in</span></h2>
+                <img src={logo} className="d-block mx-auto mt-0 mb-5" alt="logo" />
+
                 <div className="card mx-auto">
                     <h3 className="text-start mb-4">Create Account</h3>
                     <form className="text-start" onSubmit={handleRegister}>
@@ -79,9 +81,9 @@ function Register() {
                         <h6>Buying For work?</h6>
                         <a href="" className="text-decoration-none">Create a free business account</a>
                         <hr />
-                        <h4 className="fs-6">Already have an account? 
-                            <a href="" className="text-decoration-none fs-6">
-                                Sign In <img src="../../images/Polygon 2.png" alt="" />
+                        <h4 className="fs-6 ">Already have an account?  
+                            <a href="../Login" className="text-decoration-none fs-6 px-2">
+                                Sign In <img src={polygon} alt="" />
                             </a>
                         </h4>
                         <h6>By creating an account or logging in, you agree to Amazon’s</h6>
