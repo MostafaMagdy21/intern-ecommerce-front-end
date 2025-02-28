@@ -115,7 +115,7 @@ const Sidebar = ({ onFilterChange }) => {
       ))}
 
       {/* Reset Filters Button */}
-      <button className="btn btn-danger mt-3 w-100" onClick={resetFilters}>
+      <button className="btn btn-warning mt-3 w-100" onClick={resetFilters}>
         Reset Filters
       </button>
     </div>

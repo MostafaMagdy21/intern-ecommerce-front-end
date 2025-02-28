@@ -81,18 +81,18 @@ function AllProducts() {
       <ToastContainer className="toast-container" position="top-center" autoClose={3000} />
       <div className="row">
         {/* Sidebar on the left */}
-        <div className="col-lg-3 col-md-4">
+        <div className="col-lg-2 col-md-4">
           <Sidebar onFilterChange={handleFilterChange} />
         </div>
 
         {/* Products on the right */}
-        <div className="col-lg-9 col-md-8">
+        <div className="col-lg-10 col-md-8">
           <div className="row">
             {filteredProducts.map((product) => {
               const isFav = favItems.some((item) => item.id === product.id);
 
               return (
-                <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={product.id}>
+                <div className="col-lg-3 col-md-6 col-sm-12 mb-4" key={product.id}>
                   <div className="card h-100 d-flex flex-column">
                     <img
                       src={product.image}

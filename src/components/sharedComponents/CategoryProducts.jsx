@@ -93,17 +93,17 @@ function CategoryProducts() {
 
             <div className="row">
                 {/* Sidebar on the Left */}
-                <div className="col-md-3">
+                <div className="col-md-2">
                     <Sidebar onFilterChange={handleFilterChange} />
                 </div>
 
                 {/* Products on the Right */}
-                <div className="col-md-9">
+                <div className="col-md-10">
                     <div className="row">
                         {filteredProducts.map((product) => {
                             const isFav = favItems.some((item) => item.id === product.id);
                             return (
-                                <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={product.id}>
+                                <div className="col-lg-3 col-md-6 col-sm-12 mb-4" key={product.id}>
                                     <div className="card h-100 d-flex flex-column">
                                         <img
                                             src={product.image}
