@@ -382,3 +382,8 @@ color: rgb(0, 0, 121);}
     
   }
 }
+.feramFooter{
+background: transparent!important;
+max-height: 300px !important;
+
+}
