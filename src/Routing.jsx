@@ -4,7 +4,7 @@ import CategoryProducts from './components/sharedComponents/CategoryProducts'
 import SingleProduct from './components/sharedComponents/SingleProduct';
 import Home from "./components/Home/Home";
 import Cart from "./components/sharedComponents/Cart";
-import Wishlist from "./components/sharedComponents/wishlist";
+import Wishlist from "./components/sharedComponents/Wishlist";
 import Login from "./components/sharedComponents/Login";
 import Register from "./components/sharedComponents/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -17,7 +17,7 @@ export const Routing = () => {
 			<Route path="/register" element={<Register />} />
 			<Route path="/" element={<Home />} />
 			<Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-      		<Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
+			<Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
 			<Route path="/allproducts" element={<><AllProducts/></>} />
 			<Route path="/product/:id" element={<SingleProduct />} />
 			<Route path="/CategoryProducts" element={<><CategoryProducts/></>} />
