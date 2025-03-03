@@ -5,6 +5,12 @@ import { BiCart } from "react-icons/bi";
 import { CiLocationOn, CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 const TopNavbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,21 +35,6 @@ const TopNavbar = () => {
     }
   }, [searchQuery]);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (suggestions.length > 0) {
-      navigate(`/product/${suggestions[0].id}`);
-      setSearchQuery("");
-      setSuggestions([]);
-    }
-  };
-
-  const handleSuggestionClick = (id) => {
-    navigate(`/product/${id}`);
-    setSearchQuery("");
-    setSuggestions([]);
-  };
-
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       {/* Logo */}
@@ -52,7 +43,10 @@ const TopNavbar = () => {
       </a>
 
       {/* Location */}
-      <div className="navbar-text ms-2 d-none d-lg-block" style={{ color: "#C0CCCC" }}>
+      <div
+        className="navbar-text ms-2 d-none d-lg-block"
+        style={{ color: "#C0CCCC" }}
+      >
         Delivering to Surat 394210 <br />
         <a href="#" className="text-white fw-bold text-decoration-none">
           <CiLocationOn size={20} /> Update location
@@ -60,7 +54,10 @@ const TopNavbar = () => {
       </div>
 
       {/* Search Bar */}
-      <form className="d-flex flex-grow-1 mx-3 position-relative" onSubmit={handleSearch} style={{ maxWidth: "800px" }}>
+      <form
+        className="d-flex flex-grow-1 mx-3 position-relative"
+        style={{ maxWidth: "800px" }}
+      >
         <select className="form-select w-auto rounded-end-0 bg-body-secondary">
           <option>All</option>
         </select>
@@ -72,26 +69,20 @@ const TopNavbar = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button className="btn btn-warning rounded-start-0" type="submit">
+        <button className="btn btn-warning rounded-start-0">
           <CiSearch size={30} />
         </button>
-        {suggestions.length > 0 && (
-          <ul className="list-group position-absolute w-100 bg-white shadow overflow-y-scroll" style={{ marginTop: "55px", zIndex: 10, height: "200px" }}>
-            {suggestions.map((item) => (
-              <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center" onClick={() => handleSuggestionClick(item.id)} style={{ cursor: "pointer" }}>
-                <p>{item.title}</p>
-                <img src={item.image} width="30" />
-              </li>
-            ))}
-          </ul>
-        )}
       </form>
 
       {/* Right Side Elements */}
       <div className="d-flex align-items-center ms-auto">
         {/* Language Dropdown */}
         <div className="dropdown me-3">
-          <button className="btn text-white dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          <button
+            className="btn text-white dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+          >
             EN
           </button>
           <ul className="dropdown-menu">
@@ -99,13 +90,19 @@ const TopNavbar = () => {
             <li className="dropdown-item">Arabic</li>
           </ul>
         </div>
-
         {/* Account Section */}
         <div className="text-white me-3 d-none d-lg-block">
-          Hello, sign in <br />
-          <a href="/register" className="text-white fw-bold text-decoration-none">
-            Account & Lists
-          </a>
+          <SignedOut>
+            <button
+              className="btn text-white bg-dark fw-bold text-decoration-none"
+              onClick={() => (window.location.href = "/login")}
+            >
+              Sign In
+            </button>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
 
         {/* Orders Section */}
@@ -120,13 +117,15 @@ const TopNavbar = () => {
         <a href="/wishlist" className="position-relative me-4">
           <FaRegHeart className="text-white" size={30} />
           {favItems?.length > 0 && (
-            <span className="position-absolute bg-danger text-white rounded-3"
+            <span
+              className="position-absolute bg-danger text-white rounded-3"
               style={{
                 fontSize: "10px",
                 top: "-6px",
                 right: "-8px",
-                padding: "2px 5px"
-              }}>
+                padding: "2px 5px",
+              }}
+            >
               {favItems.length}
             </span>
           )}
@@ -134,15 +133,17 @@ const TopNavbar = () => {
 
         {/* Cart */}
         <a className="nav-link text-white position-relative me-3" href="/cart">
-          <BiCart size={40} />  Cart
+          <BiCart size={40} /> Cart
           {cartItems?.length > 0 && (
-            <span className="position-absolute bg-danger text-white rounded-3"
+            <span
+              className="position-absolute bg-danger text-white rounded-3"
               style={{
                 fontSize: "10px",
                 top: "0px",
                 right: "32px",
-                padding: "2px 5px"
-              }}>
+                padding: "2px 5px",
+              }}
+            >
               {cartItems.length}
             </span>
           )}
