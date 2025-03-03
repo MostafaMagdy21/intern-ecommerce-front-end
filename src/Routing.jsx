@@ -17,7 +17,7 @@ export const Routing = () => {
 			<Route path="/register" element={<Register />} />
 			<Route path="/" element={<Home />} />
 			<Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-			<Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
+			<Route path="/Wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
 			<Route path="/allproducts" element={<><AllProducts/></>} />
 			<Route path="/product/:id" element={<SingleProduct />} />
 			<Route path="/CategoryProducts" element={<><CategoryProducts/></>} />

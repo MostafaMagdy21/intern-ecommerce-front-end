@@ -91,19 +91,20 @@ const TopNavbar = () => {
           </ul>
         </div>
         {/* Account Section */}
-        <div className="text-white me-3 d-none d-lg-block">
-          <SignedOut>
-            <button
-              className="btn text-white bg-dark fw-bold text-decoration-none"
-              onClick={() => (window.location.href = "/login")}
-            >
-              Sign In
-            </button>
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </div>
+<div className="text-white me-3">
+<SignedOut>
+  <button
+    className="btn text-white bg-dark fw-bold text-decoration-none"
+    onClick={() => (window.location.href = "/login")}
+  >
+    Sign In
+  </button>
+</SignedOut>
+<SignedIn>
+  <UserButton />
+</SignedIn>
+</div>
+
 
         {/* Orders Section */}
         <div className="text-white me-3 d-none d-lg-block">
